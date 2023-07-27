@@ -43,7 +43,7 @@ export default {
   order: 1,
   debug: true,
   components: {
-    draggableList
+    draggableList,
   },
   data() {
     return {
@@ -51,18 +51,18 @@ export default {
       list: [
         { name: "John", id: 0 },
         { name: "Joao", id: 1 },
-        { name: "Jean", id: 2 }
-      ]
+        { name: "Jean", id: 2 },
+      ],
     };
   },
   methods: {
-    add: function() {
+    add: function () {
       this.list.push({ name: "Juan " + id, id: id++ });
     },
-    replace: function() {
+    replace: function () {
       this.list = [{ name: "Edgard", id: id++ }];
-    }
-  }
+    },
+  },
 };
 </script>
 <style scoped>

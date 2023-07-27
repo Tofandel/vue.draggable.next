@@ -3,8 +3,8 @@ export default {
   props: {
     prop1: {
       type: String,
-      default: "string"
-    }
+      default: "string",
+    },
   },
-  template: `<div class="fake-root" :id="prop1"><slot></slot></div>`
-}
+  template: `<div class="fake-root" :id="prop1"><slot></slot></div>`,
+};

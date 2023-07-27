@@ -8,13 +8,10 @@ describe("isHtmlTag", () => {
     ["a", true],
     ["keep-alive", false],
     ["not an element", false],
-  ])(
-    "for %s returns %s",
-    (value, expected) =>{
-      const actual = isHtmlTag(value);
-      expect(actual).toEqual(expected);
-    }
-  )
+  ])("for %s returns %s", (value, expected) => {
+    const actual = isHtmlTag(value);
+    expect(actual).toEqual(expected);
+  });
 });
 
 describe("isHtmlAttribute", () => {
@@ -30,13 +27,10 @@ describe("isHtmlAttribute", () => {
     ["notattribute", false],
     ["href", false],
     ["name", false],
-  ])(
-    "for %s returns %s",
-    (value, expected) =>{
-      const actual = isHtmlAttribute(value);
-      expect(actual).toEqual(expected);
-    }
-  )
+  ])("for %s returns %s", (value, expected) => {
+    const actual = isHtmlAttribute(value);
+    expect(actual).toEqual(expected);
+  });
 });
 
 describe("isTransition", () => {
@@ -45,12 +39,9 @@ describe("isTransition", () => {
     ["transition-group", true],
     ["transition", false],
     ["div", false],
-    ["li", false]
-  ])(
-    "for %s returns %s",
-    (value, expected) =>{
-      const actual = isTransition(value);
-      expect(actual).toEqual(expected);
-    }
-  )
+    ["li", false],
+  ])("for %s returns %s", (value, expected) => {
+    const actual = isTransition(value);
+    expect(actual).toEqual(expected);
+  });
 });

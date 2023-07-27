@@ -1,13 +1,13 @@
-const getHtmlElementFromNode = ({ el }) => el;
+const getHtmlElementFromNode = (node) => node.el;
 const addContext = (domElement, context) =>
   (domElement.__draggable_context = context);
-const getContext = domElement => domElement.__draggable_context;
+const getContext = (domElement) => domElement.__draggable_context;
 
 class ComponentStructure {
   constructor({
     nodes: { header, default: defaultNodes, footer },
     root,
-    realList
+    realList,
   }) {
     this.defaultNodes = defaultNodes;
     this.children = [...header, ...defaultNodes, ...footer];
@@ -30,9 +30,10 @@ class ComponentStructure {
   updated() {
     const { defaultNodes, realList } = this;
     defaultNodes.forEach((node, index) => {
-      addContext(getHtmlElementFromNode(node), {
+      const element = getHtmlElementFromNode(node);
+      addContext(element, {
         element: realList[index],
-        index
+        index,
       });
     });
   }
@@ -60,7 +61,7 @@ class ComponentStructure {
     }
     const firstDomListElement = getHtmlElementFromNode(defaultNodes[0]);
     const indexFirstDomListElement = [...domChildren].findIndex(
-      element => element === firstDomListElement
+      (element) => element === firstDomListElement,
     );
     return domIndex < indexFirstDomListElement ? 0 : length;
   }

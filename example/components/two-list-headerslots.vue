@@ -63,35 +63,35 @@ export default {
   display: "Two list header slot",
   order: 14,
   components: {
-    draggable
+    draggable,
   },
   data() {
     return {
       list: [
         { name: "John 1", id: 0 },
         { name: "Joao 2", id: 1 },
-        { name: "Jean 3", id: 2 }
+        { name: "Jean 3", id: 2 },
       ],
       list2: [
         { name: "Jonny 4", id: 3 },
-        { name: "Guisepe 5", id: 4 }
-      ]
+        { name: "Guisepe 5", id: 4 },
+      ],
     };
   },
   methods: {
-    add: function() {
+    add: function () {
       this.list.push({ name: "Juan " + id, id: id++ });
     },
-    replace: function() {
+    replace: function () {
       this.list = [{ name: "Edgard", id: id++ }];
     },
-    add2: function() {
+    add2: function () {
       this.list2.push({ name: "Juan " + id, id: id++ });
     },
-    replace2: function() {
+    replace2: function () {
       this.list2 = [{ name: "Edgard", id: id++ }];
-    }
-  }
+    },
+  },
 };
 </script>
 <style scoped></style>

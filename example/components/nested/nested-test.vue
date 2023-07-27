@@ -37,10 +37,10 @@ export default {
   methods: {
     emitter(value) {
       this.$emit("input", value);
-    }
+    },
   },
   components: {
-    draggable
+    draggable,
   },
   computed: {
     dragOptions() {
@@ -48,26 +48,26 @@ export default {
         animation: 0,
         group: "description",
         disabled: false,
-        ghostClass: "ghost"
+        ghostClass: "ghost",
       };
     },
     // this.value when input = v-model
     // this.list  when input != v-model
     realValue() {
       return this.value ? this.value : this.list;
-    }
+    },
   },
   props: {
     value: {
       required: false,
       type: Array,
-      default: null
+      default: null,
     },
     list: {
       required: false,
       type: Array,
-      default: null
-    }
-  }
+      default: null,
+    },
+  },
 };
 </script>

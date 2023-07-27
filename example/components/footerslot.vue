@@ -44,30 +44,30 @@ export default {
   display: "Footer slot",
   order: 12,
   components: {
-    draggable
+    draggable,
   },
   data() {
     return {
       list: [
         { name: "John", id: 0 },
         { name: "Joao", id: 1 },
-        { name: "Jean", id: 2 }
+        { name: "Jean", id: 2 },
       ],
       dragging: false,
       componentData: {
         type: "transition",
-        name: "flip-list"
-      }
+        name: "flip-list",
+      },
     };
   },
   methods: {
-    add: function() {
+    add: function () {
       this.list.push({ name: "Juan " + id, id: id++ });
     },
-    replace: function() {
+    replace: function () {
       this.list = [{ name: "Edgard", id: id++ }];
-    }
-  }
+    },
+  },
 };
 </script>
 <style scoped>

@@ -3,9 +3,9 @@
     :list="array"
     tag="fake"
     :component-data="{ prop1: 'my-id' }"
-    :item-key="key => key"
+    :item-key="(key) => key"
   >
-    <template #item="{element}">
+    <template #item="{ element }">
       <div>{{ element }}</div>
     </template>
   </draggable>
@@ -15,12 +15,12 @@ import draggable from "@/vuedraggable";
 
 export default {
   components: {
-    draggable
+    draggable,
   },
   data() {
     return {
-      array: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+      array: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
     };
-  }
+  },
 };
 </script>

@@ -47,7 +47,7 @@ const message = [
   "vue.js 2.0",
   "based",
   "on",
-  "Sortablejs"
+  "Sortablejs",
 ];
 let order = message.length;
 
@@ -56,19 +56,19 @@ export default {
   display: "Transition",
   order: 6,
   components: {
-    draggable
+    draggable,
   },
   data() {
     return {
       list: message.map((name, index) => {
         return { name, order: index + 1 };
-      })
+      }),
     };
   },
   methods: {
     sort() {
       this.list = this.list.sort((a, b) => a.order - b.order);
-    }
+    },
   },
   computed: {
     dragOptions() {
@@ -76,10 +76,10 @@ export default {
         animation: 0,
         group: "description",
         disabled: false,
-        ghostClass: "ghost"
+        ghostClass: "ghost",
       };
-    }
-  }
+    },
+  },
 };
 </script>
 

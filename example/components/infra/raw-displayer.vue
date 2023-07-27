@@ -8,11 +8,11 @@
 const props = {
   title: {
     required: true,
-    type: String
+    type: String,
   },
   value: {
-    required: true
-  }
+    required: true,
+  },
 };
 export default {
   name: "raw-displayer",
@@ -20,8 +20,8 @@ export default {
   computed: {
     valueString() {
       return JSON.stringify(this.value, null, 2);
-    }
-  }
+    },
+  },
 };
 </script>
 <style scoped>

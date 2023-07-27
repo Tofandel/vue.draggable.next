@@ -49,7 +49,7 @@ export default {
   display: "Custom Clone",
   order: 3,
   components: {
-    draggable
+    draggable,
   },
   data() {
     return {
@@ -57,26 +57,26 @@ export default {
         { name: "dog 1", id: 1 },
         { name: "dog 2", id: 2 },
         { name: "dog 3", id: 3 },
-        { name: "dog 4", id: 4 }
+        { name: "dog 4", id: 4 },
       ],
       list2: [
         { name: "cat 5", id: 5 },
         { name: "cat 6", id: 6 },
-        { name: "cat 7", id: 7 }
-      ]
+        { name: "cat 7", id: 7 },
+      ],
     };
   },
   methods: {
-    log: function(evt) {
+    log: function (evt) {
       window.console.log(evt);
     },
     cloneDog({ id }) {
       return {
         id: idGlobal++,
-        name: `cat ${id}`
+        name: `cat ${id}`,
       };
-    }
-  }
+    },
+  },
 };
 </script>
 <style scoped></style>

@@ -2,7 +2,7 @@
   <div id="app">
     <a href="https://github.com/SortableJS/vue.draggable.next" target="_blank">
       <img
-        style="position: fixed; top: 0; right: 0; border: 0; z-index:99999"
+        style="position: fixed; top: 0; right: 0; border: 0; z-index: 99999"
         width="149"
         height="149"
         src="https://github.blog/wp-content/uploads/2008/12/forkme_right_gray_6d6d6d.png?resize=149%2C149"
@@ -12,7 +12,7 @@
       />
     </a>
 
-    <div class="container ">
+    <div class="container">
       <div class="jumbotron logo">
         <img
           class="draggable"
@@ -97,16 +97,14 @@
           v-for="component in componentList"
           :key="component.name"
         >
-          <div class=" justify-content-center jumbotron main-container">
+          <div class="justify-content-center jumbotron main-container">
             <div class="row icon-container">
               <div>{{ component.instruction }}</div>
 
               <a
                 class="icon github"
                 target="_blank"
-                :href="
-                  `https://github.com/SortableJS/vue.draggable.next/blob/master/example/components/${component.name}.vue`
-                "
+                :href="`https://github.com/SortableJS/vue.draggable.next/blob/master/example/components/${component.name}.vue`"
               >
                 <button class="btn btn-secondary">
                   View code
@@ -139,7 +137,7 @@ if (showAll) {
   const requireContextDebug = require.context(
     "./debug-components/",
     false,
-    /\.vue$/
+    /\.vue$/,
   );
   requireContextDebug.keys().reduce((acc, key) => {
     const component = requireContextDebug(key).default;
@@ -155,28 +153,28 @@ export default {
   components,
   data() {
     const componentList = Object.values(components)
-      .filter(component => component.show)
+      .filter((component) => component.show)
       .sort((a, b) => a.order - b.order);
     return {
-      componentList
+      componentList,
     };
   },
   mounted() {
     this.toRoute(this.$route);
-    $('a[data-toggle="tab"]').on("shown.bs.tab", e => {
+    $('a[data-toggle="tab"]').on("shown.bs.tab", (e) => {
       this.$router.push({ path: e.target.dataset.route });
     });
   },
   methods: {
     toRoute(route) {
       $(`a[data-route="${route.path}"]`).tab("show");
-    }
+    },
   },
   watch: {
-    $route: function(route) {
+    $route: function (route) {
       this.toRoute(route);
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -285,7 +283,9 @@ a {
 .tooltip[aria-hidden="true"] {
   visibility: hidden;
   opacity: 0;
-  transition: opacity 0.15s, visibility 0.15s;
+  transition:
+    opacity 0.15s,
+    visibility 0.15s;
 }
 
 .tooltip[aria-hidden="false"] {

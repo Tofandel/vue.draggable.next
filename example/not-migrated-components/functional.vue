@@ -6,7 +6,7 @@
         v-model="rows"
         tag="v-layout"
         class="row wrap fill-height align-center sortable-list"
-        style="background: grey;"
+        style="background: grey"
       >
         <v-flex
           v-for="row in rows"
@@ -25,7 +25,7 @@
           >
             <template #item="{ element: item }">
               <v-flex pa-3 class="row-v">
-                <v-card style="height: 100px;">{{ item.title }}</v-card>
+                <v-card style="height: 100px">{{ item.title }}</v-card>
               </v-flex>
             </template>
           </draggable>
@@ -50,7 +50,7 @@ export default {
   display: "Functional third party",
   order: 17,
   components: {
-    draggable
+    draggable,
   },
   data() {
     return {
@@ -60,24 +60,24 @@ export default {
           index: 1,
           items: [
             {
-              title: "item 1"
-            }
-          ]
+              title: "item 1",
+            },
+          ],
         },
         {
           index: 2,
           items: [
             {
-              title: "item 2"
+              title: "item 2",
             },
             {
-              title: "item 3"
-            }
-          ]
-        }
-      ]
+              title: "item 3",
+            },
+          ],
+        },
+      ],
     };
-  }
+  },
 };
 </script>
 <style scoped>

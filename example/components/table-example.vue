@@ -34,7 +34,7 @@ export default {
   display: "Table",
   order: 8,
   components: {
-    draggable
+    draggable,
   },
   data() {
     return {
@@ -42,11 +42,11 @@ export default {
         { id: 1, name: "Abby", sport: "basket" },
         { id: 2, name: "Brooke", sport: "foot" },
         { id: 3, name: "Courtenay", sport: "volley" },
-        { id: 4, name: "David", sport: "rugby" }
+        { id: 4, name: "David", sport: "rugby" },
       ],
-      dragging: false
+      dragging: false,
     };
-  }
+  },
 };
 </script>
 <style scoped>

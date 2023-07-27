@@ -11,25 +11,25 @@ function project(entries) {
 
 function getComponentAttributes({ $attrs, componentData = {} }) {
   const attributes = project(
-    Object.entries($attrs).filter(([key, _]) => isHtmlAttribute(key))
+    Object.entries($attrs).filter(([key, _]) => isHtmlAttribute(key)),
   );
   return {
     ...attributes,
-    ...componentData
+    ...componentData,
   };
 }
 
 function createSortableOption({ $attrs, callBackBuilder }) {
   const options = project(getValidSortableEntries($attrs));
   Object.entries(callBackBuilder).forEach(([eventType, eventBuilder]) => {
-    events[eventType].forEach(event => {
+    events[eventType].forEach((event) => {
       options[`on${event}`] = eventBuilder(event);
     });
   });
   const draggable = `[data-draggable]${options.draggable || ""}`;
   return {
     ...options,
-    draggable
+    draggable,
   };
 }
 
@@ -43,5 +43,5 @@ function getValidSortableEntries(value) {
 export {
   getComponentAttributes,
   createSortableOption,
-  getValidSortableEntries
+  getValidSortableEntries,
 };

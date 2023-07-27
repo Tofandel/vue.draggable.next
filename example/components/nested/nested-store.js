@@ -5,7 +5,7 @@ export const nested = {
       {
         id: 1,
         name: "Shrek",
-        elements: []
+        elements: [],
       },
       {
         id: 2,
@@ -14,30 +14,30 @@ export const nested = {
           {
             id: 4,
             name: "Lord Farquad",
-            elements: []
+            elements: [],
           },
           {
             id: 5,
             name: "Prince Charming",
-            elements: []
-          }
-        ]
+            elements: [],
+          },
+        ],
       },
       {
         id: 3,
         name: "Donkey",
-        elements: []
-      }
-    ]
+        elements: [],
+      },
+    ],
   },
   mutations: {
     updateElements: (state, payload) => {
       state.elements = payload;
-    }
+    },
   },
   actions: {
     updateElements: ({ commit }, payload) => {
       commit("updateElements", payload);
-    }
-  }
+    },
+  },
 };

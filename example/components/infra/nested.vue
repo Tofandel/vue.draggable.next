@@ -21,13 +21,13 @@ export default {
   props: {
     tasks: {
       required: true,
-      type: Array
-    }
+      type: Array,
+    },
   },
   components: {
-    draggable
+    draggable,
   },
-  name: "nested-draggable"
+  name: "nested-draggable",
 };
 </script>
 <style scoped>

@@ -47,7 +47,7 @@ export default {
   display: "Clone",
   order: 2,
   components: {
-    draggable
+    draggable,
   },
   data() {
     return {
@@ -55,20 +55,20 @@ export default {
         { name: "John", id: 1 },
         { name: "Joao", id: 2 },
         { name: "Jean", id: 3 },
-        { name: "Gerard", id: 4 }
+        { name: "Gerard", id: 4 },
       ],
       list2: [
         { name: "Juan", id: 5 },
         { name: "Edgard", id: 6 },
-        { name: "Johnson", id: 7 }
-      ]
+        { name: "Johnson", id: 7 },
+      ],
     };
   },
   methods: {
-    log: function(evt) {
+    log: function (evt) {
       window.console.log(evt);
-    }
-  }
+    },
+  },
 };
 </script>
 <style scoped></style>

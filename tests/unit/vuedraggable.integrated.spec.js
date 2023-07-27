@@ -1,14 +1,14 @@
 import { mount, config } from "@vue/test-utils";
 config.global.stubs["transition-group"] = false;
 import Sortable from "sortablejs";
-import { expectHTML } from "./helper/setup"
+import { expectHTML } from "./helper/setup";
 
 jest.genMockFromModule("sortablejs");
 jest.mock("sortablejs");
 
 const SortableFake = {
   destroy: jest.fn(),
-  option: jest.fn()
+  option: jest.fn(),
 };
 Sortable.mockImplementation(() => SortableFake);
 
@@ -39,7 +39,7 @@ const expectedDomNoTransition = expectedDomWithWrapper("span");
 const expectedDomTransition = expectedDomWithWrapper("div");
 const expectedDomComponent = expectedDomWithWrapper(
   "div",
-  ' class="fake-root" id="my-id"'
+  ' class="fake-root" id="my-id"',
 );
 
 describe.each([
@@ -49,14 +49,14 @@ describe.each([
     "draggable with list and component as tag",
     DraggableWithComponent,
     expectedDomComponent,
-    "div"
+    "div",
   ],
   [
     "draggable with transition",
     DraggableWithTransition,
     expectedDomTransition,
-    "div"
-  ]
+    "div",
+  ],
 ])(
   "should update list and DOM with component: %s",
   (_, component, expectedDom, expectWrapper) => {
@@ -66,12 +66,14 @@ describe.each([
         wrapper = mount(component, {
           global: {
             components: {
-              fake
-            }
-          }
+              fake,
+            },
+          },
         });
         vm = wrapper.vm;
         element = wrapper.find(expectWrapper).element;
+
+        await nextTick();
 
         const item = element.children[2];
         const startEvt = { item };
@@ -104,5 +106,5 @@ describe.each([
         expectHTML(wrapper, expectedDom);
       });
     });
-  }
+  },
 );

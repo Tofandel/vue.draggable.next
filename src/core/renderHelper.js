@@ -1,5 +1,5 @@
 import { ComponentStructure } from "./componentStructure";
-import { isHtmlTag, isTransition } from "../util/tags";
+import { isHtmlTag, isTransition } from "@/util/tags";
 import { resolveComponent, TransitionGroup } from "vue";
 
 function getSlot(slots, key) {
@@ -9,19 +9,19 @@ function getSlot(slots, key) {
 
 function computeNodes({ $slots, realList, getKey }) {
   const normalizedList = realList || [];
-  const [header, footer] = ["header", "footer"].map(name =>
-    getSlot($slots, name)
+  const [header, footer] = ["header", "footer"].map((name) =>
+    getSlot($slots, name),
   );
   const { item } = $slots;
   if (!item) {
     throw new Error("draggable element must have an item slot");
   }
   const defaultNodes = normalizedList.flatMap((element, index) =>
-    item({ element, index }).map(node => {
+    item({ element, index }).map((node) => {
       node.key = getKey(element);
       node.props = { ...(node.props || {}), "data-draggable": true };
       return node;
-    })
+    }),
   );
   if (defaultNodes.length !== normalizedList.length) {
     throw new Error("Item slot must have only one child");
@@ -29,7 +29,7 @@ function computeNodes({ $slots, realList, getKey }) {
   return {
     header,
     footer,
-    default: defaultNodes
+    default: defaultNodes,
   };
 }
 
@@ -43,7 +43,7 @@ function getRootInformation(tag) {
       ? resolveComponent(tag)
       : transition
       ? TransitionGroup
-      : tag
+      : tag,
   };
 }
 

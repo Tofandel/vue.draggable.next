@@ -43,29 +43,29 @@ export default {
   display: "Header slot",
   order: 13,
   components: {
-    draggable
+    draggable,
   },
   data() {
     return {
       list: [
         { name: "John 1", id: 0 },
         { name: "Joao 2", id: 1 },
-        { name: "Jean 3", id: 2 }
+        { name: "Jean 3", id: 2 },
       ],
-      dragging: false
+      dragging: false,
     };
   },
   methods: {
-    add: function() {
+    add: function () {
       this.list.push({ name: "Juan " + id, id: id++ });
     },
-    replace: function() {
+    replace: function () {
       this.list = [{ name: "Edgard", id: id++ }];
     },
-    log: function(evt) {
+    log: function (evt) {
       window.console.log(evt);
-    }
-  }
+    },
+  },
 };
 </script>
 <style scoped></style>

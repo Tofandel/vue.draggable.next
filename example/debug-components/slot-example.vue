@@ -31,15 +31,11 @@
         </template>
 
         <template #header>
-          <div>
-            header slot
-          </div>
+          <div>header slot</div>
         </template>
 
         <template #footer>
-          <div>
-            footer slot
-          </div>
+          <div>footer slot</div>
         </template>
       </draggable>
     </div>
@@ -58,7 +54,7 @@ export default {
   order: 1,
   debug: true,
   components: {
-    draggable
+    draggable,
   },
   data() {
     return {
@@ -66,21 +62,21 @@ export default {
       list: [
         { name: "John", id: 0 },
         { name: "Joao", id: 1 },
-        { name: "Jean", id: 2 }
-      ]
+        { name: "Jean", id: 2 },
+      ],
     };
   },
   methods: {
-    clear: function() {
+    clear: function () {
       this.list = [];
     },
-    add: function() {
+    add: function () {
       this.list.push({ name: "Juan " + id, id: id++ });
     },
-    remove: function() {
+    remove: function () {
       this.list.pop();
-    }
-  }
+    },
+  },
 };
 </script>
 <style scoped>

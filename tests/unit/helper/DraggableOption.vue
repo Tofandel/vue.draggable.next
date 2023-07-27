@@ -1,6 +1,6 @@
 <template>
-  <draggable :list="array" v-bind="additionalData" :item-key="key => key">
-    <template #item="{element}">
+  <draggable :list="array" v-bind="additionalData" :item-key="(key) => key">
+    <template #item="{ element }">
       <div>{{ element }}</div>
     </template>
   </draggable>
@@ -12,16 +12,16 @@ export default {
   props: {
     additionalData: {
       type: Object,
-      default: () => {}
-    }
+      default: () => {},
+    },
   },
   components: {
-    draggable
+    draggable,
   },
   data() {
     return {
-      array: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+      array: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
     };
-  }
+  },
 };
 </script>

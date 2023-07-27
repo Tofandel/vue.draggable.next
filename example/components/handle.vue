@@ -41,32 +41,32 @@ export default {
   instruction: "Drag using the handle icon",
   order: 5,
   components: {
-    draggable
+    draggable,
   },
   data() {
     return {
       list: [
         { name: "John", text: "", id: 0 },
         { name: "Joao", text: "", id: 1 },
-        { name: "Jean", text: "", id: 2 }
+        { name: "Jean", text: "", id: 2 },
       ],
-      dragging: false
+      dragging: false,
     };
   },
   computed: {
     draggingInfo() {
       return this.dragging ? "under drag" : "";
-    }
+    },
   },
   methods: {
     removeAt(idx) {
       this.list.splice(idx, 1);
     },
-    add: function() {
+    add: function () {
       id++;
       this.list.push({ name: "Juan " + id, id, text: "" });
-    }
-  }
+    },
+  },
 };
 </script>
 <style scoped>

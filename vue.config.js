@@ -1,11 +1,11 @@
 const config = {
   publicPath: "./",
-  configureWebpack: { 
+  configureWebpack: {
     output: {
-      libraryExport: 'default'
-    }
-  }
-}
+      libraryExport: "default",
+    },
+  },
+};
 
 if (process.env.NODE_ENV === "production") {
   config.configureWebpack.externals = {
@@ -13,9 +13,9 @@ if (process.env.NODE_ENV === "production") {
       commonjs: "sortablejs",
       commonjs2: "sortablejs",
       amd: "sortablejs",
-      root: "Sortable"
-    }
+      root: "Sortable",
+    },
   };
-};
+}
 
 module.exports = config;

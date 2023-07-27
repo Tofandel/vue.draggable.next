@@ -16,7 +16,7 @@ export default {
   display: "Nested",
   order: 15,
   components: {
-    nestedDraggable
+    nestedDraggable,
   },
   data() {
     return {
@@ -26,26 +26,26 @@ export default {
           tasks: [
             {
               name: "task 2",
-              tasks: []
-            }
-          ]
+              tasks: [],
+            },
+          ],
         },
         {
           name: "task 3",
           tasks: [
             {
               name: "task 4",
-              tasks: []
-            }
-          ]
+              tasks: [],
+            },
+          ],
         },
         {
           name: "task 5",
-          tasks: []
-        }
-      ]
+          tasks: [],
+        },
+      ],
     };
-  }
+  },
 };
 </script>
 <style scoped></style>

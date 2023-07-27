@@ -14,7 +14,7 @@
         :component-data="{
           tag: 'ul',
           type: 'transition-group',
-          name: !drag ? 'flip-list' : null
+          name: !drag ? 'flip-list' : null,
         }"
         v-model="list"
         v-bind="dragOptions"
@@ -52,7 +52,7 @@ const message = [
   "vue.js 2.0",
   "based",
   "on",
-  "Sortablejs"
+  "Sortablejs",
 ];
 
 export default {
@@ -60,20 +60,20 @@ export default {
   display: "Transitions",
   order: 7,
   components: {
-    draggable
+    draggable,
   },
   data() {
     return {
       list: message.map((name, index) => {
         return { name, order: index + 1 };
       }),
-      drag: false
+      drag: false,
     };
   },
   methods: {
     sort() {
       this.list = this.list.sort((a, b) => a.order - b.order);
-    }
+    },
   },
   computed: {
     dragOptions() {
@@ -81,10 +81,10 @@ export default {
         animation: 200,
         group: "description",
         disabled: false,
-        ghostClass: "ghost"
+        ghostClass: "ghost",
       };
-    }
-  }
+    },
+  },
 };
 </script>
 
